@@ -1,3 +1,32 @@
 * {
-    background-color:black;
+    background-color: black;
+}
+
+
+/* ---------------- styling swipe for mobile -------------------------------------------------------*/
+
+@media screen and (max-width: 600px) {
+.slider {
+    font-family: sans-serif;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+}
+
+.img {
+    color: white;
+    border-right: 1px solid white;
+    padding: 1rem;
+    min-width: 100vw;
+    height:100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    text-align: center;
+    position: relative;
+    }}
+
+span {
+    position:absolute;
+    top:50%;
 }
