@@ -1,0 +1,45 @@
+:root{
+    --main-darkgreen: #005c42;
+}
+
+* {
+    background-color: black;
+    color: white;
+}
+
+.disappear {
+    display:none;
+
+}
+
+/* ...............            styling header .............................................*/
+
+header {
+    height:100vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+button {
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    border: none;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+video {
+}
+
+.HeaderTitle {
+   text-transform: uppercase;
+    font-size: 10em;
+}
+
+span {
+    color: var(--main-darkgreen);
+}
