@@ -13,7 +13,6 @@
 
 }
 
-
 .AnimationHeader {
     animation: AnimationHeader .5s ease-in;
 
@@ -126,3 +125,17 @@
 
 /* --------------------- ABOUT styling ________________________________________*/
 
+.parallax {
+    overflow-y: hidden;
+}
+.AboutUs {
+    z-index: 2;
+    font-size: 1.5em;
+    margin-left:35vw;
+    background-color: transparent;
+
+}
+
+.object-wrapper {
+    position:relative;
+}
