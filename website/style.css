@@ -12,7 +12,28 @@
 
 }
 
-/* ...............            styling header .............................................*/
+
+.AnimationHeader{
+  animation: AnimationHeader .5s ease-in;
+
+}
+
+@keyframes AnimationHeader {
+    from {
+        width:0;
+        color:black;
+    }
+
+    to {
+        width: 100%;
+        color:white;
+    }
+}
+
+/* ...............            styling header for desktop ....................................*/
+
+@media only screen and (min-width: 992px)
+{
 
 header {
     height:100vh;
@@ -42,4 +63,65 @@ video {
 
 span {
     color: var(--main-darkgreen);
+}
+}
+
+/* -------------------- styling folder section ---------------------------*/
+
+.container-projects {
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    height: 80vh;
+}
+
+.container-projects div {
+    overflow: hidden;
+    width:20%;
+    transform: skewX(-18deg);
+}
+
+.portrait img {
+    grid-area: 1 / 1;
+    transform: skewX(18deg);
+    height: 100%;
+    width: auto;
+    transform-origin: bottom left;
+}
+
+.portrait:hover {
+    animation: widthening .3s ease-out forwards;
+}
+
+.portrait:hover p {
+    display: block;
+}
+@keyframes widthening {
+    to {width:60%};
+}
+
+.portrait {
+    display: grid;
+    grid-template: 1 / 1;
+}
+
+.portrait p {
+    display: none;
+    grid-area: 1 / 1;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-size: 120%;
+    font-size: 2em;
+    transform: skewX(18deg);
+    align-self:center;
+    text-align: center;
+    color: black;
+    width: 120%;
+
+}
+
+/* --------------------- ABOUT styling ________________________________________*/
+
+#AboutUs {
+
 }
