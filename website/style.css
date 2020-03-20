@@ -133,9 +133,17 @@
     font-size: 1.5em;
     margin-left:35vw;
     background-color: transparent;
-
 }
 
+.AboutUs-second {
+    z-index: 2;
+    font-size: 1.5em;
+    margin-left:35vw;
+    background-color: transparent;
+}
+
+.img-parallax {
+}
 .object-wrapper {
     position:relative;
 }
