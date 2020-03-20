@@ -14,43 +14,4 @@ Each feed item description is displayed in a <p> tag with class feed-item-desc.
 
 .insta-feed{
     display: block;
-    width: 800px;
-    height: 500px;
-    background-color: white;
 }
-
-.feed-title{
-    color: white;
-    width: 500px;
-}
-
-.feed-title a{
-    color: white;
-    text-decoration: none;
-}
-
-.feed-item-title a{
-    color: white;
-    text-decoration: none;
-}
-
-.feed-title-image{
-    height: 200px;
-}
-
-div{
-    width: 500px;
-}
-
-div div{
-    color: white;
-}
-
-
-.feed-item-desc{
-
-}
-.feed-desc{
-    font-size: 25px;
-}
-
