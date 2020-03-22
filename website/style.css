@@ -3,6 +3,7 @@
 }
 
 * {
+    box-sizing: border-box;
     background-color: #3C3E3F;
     color: white;
 
@@ -42,7 +43,7 @@
 
     }
 
-    button {
+    .skip {
         color: white;
         position: absolute;
         bottom: 10px;
@@ -127,6 +128,7 @@
 
 .parallax {
     overflow-y: hidden;
+    height: 100vh;
 }
 .AboutUs {
     z-index: 2;
@@ -143,7 +145,37 @@
 }
 
 .img-parallax {
+    max-height: 740px;
+
 }
 .object-wrapper {
     position:relative;
+}
+
+/* ------------------------------- Instagram rss flux ---------------------------- */
+
+.ra-list-layout-container {
+    display: none;
+}
+
+.feed-card-container {
+    border: hotpink solid 2px;
+}
+
+/* ------------------------ CTA ---------------------------------------------------*/
+.cta-container {
+    display: flex;
+    flex-direction: column;
+}
+.cta {
+    justify-content: center;
+    background-color: var(--main-darkgreen);
+    border: none;
+    font-size: 4em;
+    align-self: center;
+}
+
+/* ------------------------- footer ------------------------------------------------*/
+footer {
+    height:10vh;
 }
