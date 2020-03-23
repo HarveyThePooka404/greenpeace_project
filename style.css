@@ -14,4 +14,9 @@ Each feed item description is displayed in a <p> tag with class feed-item-desc.
 
 .insta-feed{
     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 800px;
+    overflow: hidden;
 }
