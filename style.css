@@ -11,13 +11,8 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.disappear {
-    display: none;
-
-}
-
 h1 {
-font-size: 3em;
+    font-size: 3em;
     text-align: center;
     margin: .2em 0 .2em 0;
     border-top: solid 5px var(--main-green);
@@ -25,29 +20,82 @@ font-size: 3em;
 
 }
 
-button{
-    cursor:pointer;
-        background-color: var(--main-green);
-    padding: .2em;
-    border-radius: 10px;
-    border: none;
-    font-size: 4em;
-    text-transform: uppercase;
+
+/* ...............            styling header ....................................*/
+
+header {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+    overflow-y: hidden;
+
 }
+
+.smaller {
+    text-transform: uppercase;
+    font-size: 2.5em;
+    text-align: center;
+    align-self: center;
+    z-index: 10;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    background-color: transparent;
+}
+
+
+
+
+    span {
+        color: var(--main-green);
+        background-color: transparent;
+
+    }
+
+/* -------------------- styling folder section ---------------------------*/
+
+    .project-presentation {
+        text-align: center;
+        font-size: 1.5em;
+        padding: .2em 0 .2em 0;
+    }
+
+    .cta-projects {
+        margin: .2em 0 .2em 0;
+
+    }
 
 /* ...............            styling header for desktop ....................................*/
 
+
 @media only screen and (min-width: 992px) {
 
-    header {
-        height: 100vh;
-        width: auto;
-        display: grid;
-        grid-template-rows: auto;
-        justify-content: center;
+    .bigger {
+    text-transform: uppercase;
+    font-size: 12em;
+    max-height: 100%;
+    text-align: center;
+    z-index: 10;
+    grid-row-start: 3;
+    grid-column-start: 1;
+    background-color: transparent;
 
+}
 
-    }
+    .protest {
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+
+}
+
+    .disappear {
+    display: none;
+
+}
 
     .starting {
         position: absolute;
@@ -57,7 +105,7 @@ button{
         font-size: 1.5em;
         background-color: transparent;
         animation: leftmove .3s ease 3s forwards;
-                color: var(--main-green);
+        color: var(--main-green);
 
     }
 
@@ -84,191 +132,266 @@ button{
         background-color: transparent;
     }
 
-    .smaller {
-        text-transform: uppercase;
-        font-size: 2.5em;
+
+    /* -------------------- header animations ---------------------------------*/
+
+    @keyframes leftmove {
+        to {
+            transform: translateX(170px);
+        }
+    }
+
+    .AnimationHeader {
+        animation: AnimationHeader .3s ease-out;
+        background-color: transparent;
+    }
+
+    @keyframes AnimationHeader {
+        from {
+            width: 0;
+            color: black;
+        }
+
+        to {
+            width: 100%;
+            color: white;
+        }
+    }
+
+    /* -------------------- styling folder section for desktop ---------------------------*/
+
+    .projects-folder {
         text-align: center;
+    }
+
+    .container-projects {
+        display: flex;
+        overflow: hidden;
+        flex-direction: row;
+        height: 80vh;
+    }
+
+    .container-projects div {
+        overflow: hidden;
+        width: 20%;
+        transform: skewX(-18deg);
+    }
+
+    .portrait img {
+        grid-area: 1 / 1;
+        transform: skewX(18deg);
+        height: 100%;
+        width: auto;
+        transform-origin: bottom left;
+    }
+
+    .portrait:hover {
+        animation: widthening .3s ease-out forwards;
+    }
+
+    .portrait:hover p {
+        display: block;
+    }
+
+    @keyframes widthening {
+        to {
+            width: 60%
+        }
+
+        ;
+    }
+
+    .portrait {
+        display: grid;
+        grid-template: 1 / 1;
+    }
+
+    .portrait p {
+        display: none;
+        grid-area: 1 / 1;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-size: 120%;
+        font-size: 2em;
+        transform: skewX(18deg);
         align-self: center;
-        z-index: 10;
-        grid-row-start: 2;
-        grid-column-start: 1;
-    }
-
-    .bigger {
-        text-transform: uppercase;
-        font-size: 12em;
-        max-height: 100%;
         text-align: center;
-        z-index: 10;
-        grid-row-start: 3;
-                        grid-column-start: 1;
-
+        color: black;
+        width: 120%;
 
     }
 
-    .protest {
-        width: 100%;
-        height: auto;
-        z-index: 1;
-        grid-row-start: 2;
-        grid-row-end: 4;
-                grid-column-start: 1;
+    button {
+    cursor: pointer;
+    background-color: var(--main-green);
+    padding: .2em;
+    border-radius: 10px;
+    border: none;
+    font-size: 4em;
+    text-transform: uppercase;
+}
+
+    /* --------------------- ABOUT styling ________________________________________*/
+
+    .parallax {
+        overflow-y: hidden;
+        height: 80vh;
+    }
+
+    .AboutUs {
+        z-index: 2;
+        font-size: 1.5em;
+        margin-left: 35vw;
+        background-color: transparent;
+    }
+
+    .AboutUs-second {
+        z-index: 2;
+        font-size: 1.5em;
+        margin-left: 35vw;
+        background-color: transparent;
+    }
+
+    .img-parallax {
+        max-height: 740px;
 
     }
 
-    span {
+    .object-wrapper {
+        position: relative;
+    }
+
+    /* ------------------------------- Instagram rss flux ---------------------------- */
+
+    .ra-list-layout-container {
+        display: none;
+    }
+
+    .feed-card-container {
+        border: hotpink solid 2px;
+    }
+
+    /* ------------------------ CTA ---------------------------------------------------*/
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    /* ------------------------- footer ------------------------------------------------*/
+    footer {
+        height: 15vh;
+    }
+
+}
+
+/* ---------------------- styling for mobile ------------------ */
+
+@media only screen and (min-device-width : 375px) and (max-device-width : 736px) {
+
+        .protest {
+    width: auto;
+    height: 100vh;
+    z-index: 1;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    overflow-x: hidden;
+
+}
+    .bigger {
+    text-transform: uppercase;
+    font-size: 6em;
+    text-align: center;
+    z-index: 10;
+    grid-row-start: 3;
+    grid-column-start: 1;
+    background-color: transparent;
+        font-weight: bold;
+
+}
+
+        span {
         color: var(--main-green);
         background-color: transparent;
+            font-size: 2em;
 
     }
-}
 
-/* -------------------- header animations ---------------------------------*/
-
-@keyframes leftmove {
-    to {
-        transform: translateX(170px);
-    }
-}
-
-.AnimationHeader {
-    animation: AnimationHeader .3s ease-out;
-    background-color: transparent;
-}
-
-@keyframes AnimationHeader {
-    from {
-        width: 0;
-        color: black;
+    .starting {
+        display: none;
     }
 
-    to {
+    .arrow {
+        display: none;
+    }
+
+    .video {
+        display: none;
+    }
+
+    .skip {
+        display: none;
+    }
+
+    .wrapper-mobile {
+        display:none;
+    }
+
+/* -------------------- styling folder section for mobile ---------------------------*/
+
+    .container-projects {
+        display: flex;
+        flex-flow: column;
         width: 100%;
-        color: white;
-    }
-}
-
-/* -------------------- styling folder section ---------------------------*/
-
-.projects-folder {
-    text-align: center;
-}
-
-.container-projects {
-    display: flex;
-    overflow: hidden;
-    flex-direction: row;
-    height: 80vh;
-}
-
-.container-projects div {
-    overflow: hidden;
-    width: 20%;
-    transform: skewX(-18deg);
-}
-
-.project-presentation {
-    text-align: center;
-    font-size: 1.5em;
-    padding: .2em 0 .2em 0;
-}
-.portrait img {
-    grid-area: 1 / 1;
-    transform: skewX(18deg);
-    height: 100%;
-    width: auto;
-    transform-origin: bottom left;
-}
-
-.portrait:hover {
-    animation: widthening .3s ease-out forwards;
-}
-
-.portrait:hover p {
-    display: block;
-}
-
-@keyframes widthening {
-    to {
-        width: 60%
     }
 
-    ;
-}
+    .portrait {
+        display: grid;
+        grid-template: 1 / 1;
+    }
 
-.portrait {
-    display: grid;
-    grid-template: 1 / 1;
-}
+    .portrait img {
+        grid-area: 1 / 1;
+        width:100vw;
+    }
 
-.portrait p {
-    display: none;
-    grid-area: 1 / 1;
-    z-index: 2;
-    background-color: rgba(255, 255, 255, 0.8);
-    background-size: 120%;
+    .portrait p {
+        grid-area: 1 / 1;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-size: 120%;
+                align-self: center;
+        text-align: center;
+        color: black;
+        font-size: 3em;
+    }
+
+    button {
+    cursor: pointer;
+    background-color: var(--main-green);
+    padding: .2em;
+    border: none;
     font-size: 2em;
-    transform: skewX(18deg);
-    align-self: center;
-    text-align: center;
-    color: black;
-    width: 120%;
+    text-transform: uppercase;
 
 }
 
-.cta-projects {
-    margin: .2em 0 .2em 0;
+/* ------------- styling about us for mobile -------------------------- */
 
-}
-/* --------------------- ABOUT styling ________________________________________*/
+    .img-parallax {
+        display:none;
+    }
 
-.parallax {
-    overflow-y: hidden;
-    height: 80vh;
-}
+    .object-wrapper {
+        padding: .3em .2em .3em .2em;
+    }
 
-.AboutUs {
-    z-index: 2;
-    font-size: 1.5em;
-    margin-left: 35vw;
-    background-color: transparent;
-}
+/* ------------ styling for Instagram for mobile --------------------------*/
+    .mobile-wrapper-rss {
+        max-height: 80vh;
+        overflow: scroll;
 
-.AboutUs-second {
-    z-index: 2;
-    font-size: 1.5em;
-    margin-left: 35vw;
-    background-color: transparent;
-}
-
-.img-parallax {
-    max-height: 740px;
-
-}
-
-.object-wrapper {
-    position: relative;
-}
-
-/* ------------------------------- Instagram rss flux ---------------------------- */
-
-.ra-list-layout-container {
-    display: none;
-}
-
-.feed-card-container {
-    border: hotpink solid 2px;
-}
-
-/* ------------------------ CTA ---------------------------------------------------*/
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-/* ------------------------- footer ------------------------------------------------*/
-footer {
-    height: 15vh;
+    }
 }
