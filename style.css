@@ -390,7 +390,7 @@ header {
 
 /* ------------ styling for Instagram for mobile --------------------------*/
     .mobile-wrapper-rss {
-        max-height: 80vh;
+        max-height: 50vh;
         overflow: scroll;
 
     }
