@@ -1,12 +1,14 @@
 :root {
     --main-darkgreen: #005c42;
+    --main-green: #66cc00;
 }
 
 * {
     box-sizing: border-box;
     background-color: #3C3E3F;
     color: white;
-
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .disappear {
@@ -14,9 +16,124 @@
 
 }
 
-.AnimationHeader {
-    animation: AnimationHeader .5s ease-in;
+h1 {
+font-size: 3em;
+    text-align: center;
+    margin: .2em 0 .2em 0;
+    border-top: solid 5px var(--main-green);
+    border-bottom: solid 5px var(--main-green);
 
+}
+
+button{
+    cursor:pointer;
+        background-color: var(--main-green);
+    padding: .2em;
+    border-radius: 10px;
+    border: none;
+    font-size: 4em;
+    text-transform: uppercase;
+}
+
+/* ...............            styling header for desktop ....................................*/
+
+@media only screen and (min-width: 992px) {
+
+    header {
+        height: 100vh;
+        width: auto;
+        display: grid;
+        grid-template-rows: auto;
+        justify-content: center;
+
+
+    }
+
+    .starting {
+        position: absolute;
+        top: 30px;
+        left: -150px;
+        z-index: 2;
+        font-size: 1.5em;
+        background-color: transparent;
+        animation: leftmove .3s ease 3s forwards;
+                color: var(--main-green);
+
+    }
+
+    .arrow {
+        position: absolute;
+        bottom: 0px;
+        left: -150px;
+        z-index: 2;
+        font-size: 5em;
+        background-color: transparent;
+        animation: leftmove .5s ease-out 4s forwards;
+        color: var(--main-green);
+
+    }
+
+    .skip {
+        color: white;
+        position: absolute;
+        bottom: 25px;
+        right: 20px;
+        border: none;
+        font-weight: bold;
+        font-size: 1.5em;
+        background-color: transparent;
+    }
+
+    .smaller {
+        text-transform: uppercase;
+        font-size: 2.5em;
+        text-align: center;
+        align-self: center;
+        z-index: 10;
+        grid-row-start: 2;
+        grid-column-start: 1;
+    }
+
+    .bigger {
+        text-transform: uppercase;
+        font-size: 12em;
+        max-height: 100%;
+        text-align: center;
+        z-index: 10;
+        grid-row-start: 3;
+                        grid-column-start: 1;
+
+
+    }
+
+    .protest {
+        width: 100%;
+        height: auto;
+        z-index: 1;
+        grid-row-start: 2;
+        grid-row-end: 4;
+                grid-column-start: 1;
+
+    }
+
+    span {
+        color: var(--main-green);
+        background-color: transparent;
+
+    }
+}
+
+/* -------------------- header animations ---------------------------------*/
+
+@keyframes leftmove {
+    to {
+        transform: translateX(170px);
+    }
+}
+
+.AnimationHeader {
+    animation: AnimationHeader .3s ease-out;
+    background-color: transparent;
 }
 
 @keyframes AnimationHeader {
@@ -31,41 +148,11 @@
     }
 }
 
-/* ...............            styling header for desktop ....................................*/
-
-@media only screen and (min-width: 992px) {
-
-    header {
-        height: 100vh;
-        width: auto;
-        display: flex;
-        justify-content: center;
-
-    }
-
-    .skip {
-        color: white;
-        position: absolute;
-        bottom: 10px;
-        right: 20px;
-        border: none;
-        font-weight: bold;
-        font-size: 1.5em;
-    }
-
-    video {}
-
-    .HeaderTitle {
-        text-transform: uppercase;
-        font-size: 10em;
-    }
-
-    span {
-        color: var(--main-darkgreen);
-    }
-}
-
 /* -------------------- styling folder section ---------------------------*/
+
+.projects-folder {
+    text-align: center;
+}
 
 .container-projects {
     display: flex;
@@ -80,6 +167,11 @@
     transform: skewX(-18deg);
 }
 
+.project-presentation {
+    text-align: center;
+    font-size: 1.5em;
+    padding: .2em 0 .2em 0;
+}
 .portrait img {
     grid-area: 1 / 1;
     transform: skewX(18deg);
@@ -124,23 +216,28 @@
 
 }
 
+.cta-projects {
+    margin: .2em 0 .2em 0;
+
+}
 /* --------------------- ABOUT styling ________________________________________*/
 
 .parallax {
     overflow-y: hidden;
-    height: 100vh;
+    height: 80vh;
 }
+
 .AboutUs {
     z-index: 2;
     font-size: 1.5em;
-    margin-left:35vw;
+    margin-left: 35vw;
     background-color: transparent;
 }
 
 .AboutUs-second {
     z-index: 2;
     font-size: 1.5em;
-    margin-left:35vw;
+    margin-left: 35vw;
     background-color: transparent;
 }
 
@@ -148,8 +245,9 @@
     max-height: 740px;
 
 }
+
 .object-wrapper {
-    position:relative;
+    position: relative;
 }
 
 /* ------------------------------- Instagram rss flux ---------------------------- */
@@ -163,19 +261,14 @@
 }
 
 /* ------------------------ CTA ---------------------------------------------------*/
-.cta-container {
+.container {
     display: flex;
     flex-direction: column;
-}
-.cta {
-    justify-content: center;
-    background-color: var(--main-darkgreen);
-    border: none;
-    font-size: 4em;
-    align-self: center;
+    align-items: center;
+
 }
 
 /* ------------------------- footer ------------------------------------------------*/
 footer {
-    height:10vh;
+    height: 15vh;
 }

@@ -1,16 +1,21 @@
 const vid = document.querySelector("video");
 const btn = document.querySelector("button");
-const titleHeader = document.querySelector(".HeaderTitle");
+const bigger = document.querySelector(".bigger");
+const smaller = document.querySelector(".smaller");
+const protest = document.querySelector(".protest");
 
 btn.addEventListener("click", HeaderOut);
 
 function HeaderOut() {
-    console.log("look at that button");
     vid.classList.add("disappear");
     btn.classList.add("disappear");
 
-    titleHeader.classList.remove("disappear");
-    titleHeader.classList.add("AnimationHeader");
+    smaller.classList.remove("disappear");
+    smaller.classList.add("AnimationHeader");
+
+    bigger.classList.remove("disappear");
+    protest.classList.remove("disappear");
+    bigger.classList.add("AnimationHeader");
 }
 
 vid.onended = HeaderOut;
@@ -41,7 +46,7 @@ window.addEventListener("scroll", function () {
 
     parallaxedUp.forEach(function (f) {
         var scrolled = window.scrollY;
-        var offSet = - scrolled * f.getAttribute("data-delay");
+        var offSet = -scrolled * f.getAttribute("data-delay");
         f.style.top = offSet + "px";
 
     });
